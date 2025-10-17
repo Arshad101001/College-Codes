@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    border: 2px solid blueviolet;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.rate{
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text{
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: rgb(63, 63, 134);
+    border: none;
+    border-radius: 8px;
+}
+
+.centre{
+    align-self: center;
+}

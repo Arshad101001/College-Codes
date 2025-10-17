@@ -1,0 +1,2 @@
+This is a Demonstration of basic file operation in Node.js
+Appending some more content to the file
