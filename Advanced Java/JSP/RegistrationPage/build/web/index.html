@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <!--<h1>Registration Form</h1>-->
+    <form action="Proccess.jsp">
+
+
+        <table border="1" cellpadding="10px" align="center">
+            <thead>
+                <tr>
+                    <th colspan="2" style="background-color: yellow; padding: 10px">
+                        Registration Form
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Full Name</td>
+                    <td> <input type="text" name="txtName" value="" /> </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td> <input type="text" name="txtEmail" value="" /> </td>
+                </tr>
+
+                <tr>
+                    <td>Date of Birth</td>
+                    <td> <input type="text" name="txtdate" id="datepicker" /> </td>
+                </tr>
+
+                <tr>
+                    <td>Educational Qualification</td>
+                    <td>
+                        <select name="opt-qualify">
+                            <option>HSC</option>
+                            <option>Diploma</option>
+                            <option>Graduation</option>
+                            <option>Post-Graduation</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td valign="top">Write about yourself</td>
+                    <td>
+                        <textarea name="about" rows="8" cols="30"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Choose Language</td>
+                    <td>
+                        <input type="checkbox" name="language[]" value="English" /> English
+                        <input type="checkbox" name="language[]" value="Hindi" /> Hindi
+                        <input type="checkbox" name="language[]" value="Urdu" /> Urdu
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gen" value="Male" /> Male
+                        <input type="radio" name="gen" value="Female" /> Female
+                        <input type="radio" name="gen" value="Tgen" /> Tgen
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> <input type="submit" value="Submit" /> </td>
+                    <td> <input type="reset" value="Reset" /> </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

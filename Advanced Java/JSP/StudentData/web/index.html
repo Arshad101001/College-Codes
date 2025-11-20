@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Student Data</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Student Registration Form</h1>
+        <form method="get" action="Data.jsp">
+            Roll No: <input type="text" name="rollNo" /><br><br>
+            Name: <input type="text" name="sname" /><br><br>
+            Course: 
+            <select name="course">
+                <option>M.C.A</option>
+                <option>B.C.A</option>
+                <option>B.SC.IT</option>
+                <option>B.Com</option>
+            </select> <br><br>
+            
+            Semester: 
+            <select name="sem">
+                <option>SEM I</option>
+                <option>SEM II</option>
+                <option>SEM III</option>
+                <option>Sem IV</option>
+            </select> <br><br>
+
+            <input type="submit" name="insert" value="Insert" />
+            <input type="submit" name="delete" value="Delete" />
+            <input type="submit" name="display" value="Display" />
+
+        </form>
+    </body>
+</html>
