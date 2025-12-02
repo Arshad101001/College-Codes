@@ -1,0 +1,30 @@
+package com.Student;
+
+public class StudentInfo {
+	String name;
+	String rollNo;
+	String std;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getRollNo() {
+		return rollNo;
+	}
+	public void setRollNo(String rollNo) {
+		this.rollNo = rollNo;
+	}
+	public String getStd() {
+		return std;
+	}
+	public void setStd(String std) {
+		this.std = std;
+	}
+	@Override
+	public String toString() {
+		return "StudentInfo [name = " + name + ", rollNo = " + rollNo + ", std = " + std + "]";
+	}
+	
+}
