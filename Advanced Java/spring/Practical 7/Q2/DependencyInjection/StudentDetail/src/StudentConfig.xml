@@ -29,5 +29,9 @@
 	
 	<!-- Injecting dependency using p attribute -->
 	<bean id="s3" class="com.Student.StudentInfo" p:name="Ganpat Ghisela" p:rollNo="103" p:std="TYMCA" />
+	
+	<!-- Using object -->
+	<bean id="addrRef" class="com.Student.Address" p:city="maug pur" p:state="Maug" />
+	<bean id="s4" class="com.Student.StudentInfo" p:name="maru marela" p:rollNo="104" p:std="BMCA" p:address-ref="addrRef" />
 
 </beans>

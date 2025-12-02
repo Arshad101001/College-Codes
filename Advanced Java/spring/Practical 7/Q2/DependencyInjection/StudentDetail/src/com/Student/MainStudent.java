@@ -11,6 +11,7 @@ public class MainStudent {
 		StudentInfo s1 = (StudentInfo) context.getBean("s1");
 		StudentInfo s2 = (StudentInfo) context.getBean("s2");
 		StudentInfo s3 = (StudentInfo) context.getBean("s3");
+		StudentInfo s4 = (StudentInfo) context.getBean("s4");
 		
 		
 		// you can call get method if you have private variable type
@@ -21,6 +22,9 @@ public class MainStudent {
 		
 		// if your bean has toString method so you can directly print the object it will call toString method
 		System.out.println("Student 3 : \n" + s3);
+		
+		// accessing object types
+		System.out.println("Student 4 : \n" + s4.name + "\n" + s4.rollNo + "\n" + s4.std + "\n" + s4.getAddress().getCity() + "\n" + s4.address.getState() + "\n");
 		
 	}
 
