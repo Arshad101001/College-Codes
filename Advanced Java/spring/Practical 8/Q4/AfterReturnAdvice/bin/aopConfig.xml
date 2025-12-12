@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- Registering our business class as a Spring bean -->
+	<bean id="userService" class="com.aop.UserService" />
+	
+	<!-- Registering the Aspect class that contains our After Returning Advice -->
+	<bean id="aspectClass" class="com.aop.AspectClass" />
+	
+	<!-- Spring AOP Configuration -->
+	<aop:config>
+		
+		<!-- Attaching the aspect class -->
+		<aop:aspect ref="aspectClass">
+		
+			<!-- Pointcut definition:
+                 This tells Spring to apply AOP on ANY method inside UserService class.
+            -->
+			<aop:pointcut expression="execution(* com.aop.UserService.*(..))" id="serviceMethod"/>
+			
+			<!-- AFTER RETURNING advice:
+                 This runs ONLY when the method finishes successfully and returns a value.
+                 
+                 method        → Name of the advice method in AspectClass
+                 pointcut-ref  → Which methods to apply AOP to (serviceMethod)
+                 returning     → The argument name used to receive the returned value
+            -->
+			<!-- once the method finishes its execution it will call afterReturningAdvice method from aspectClass (afterReturningAdvice(returnValue)) -->
+			<aop:after-returning method="afterReturningAdvice" pointcut-ref="serviceMethod" returning="returnValue"/>
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
