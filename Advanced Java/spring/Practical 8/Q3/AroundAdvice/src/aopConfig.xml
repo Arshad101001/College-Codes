@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- target bean -->
+	<bean id="myService" class="com.aop.WelcomeService" />
+	
+	<!-- aspect bean -->
+	<bean id="loggingAspect" class="com.aop.LoggingAspect" />
+	
+	<aop:config>	<!-- configuring AOP -->
+		<aop:aspect ref="loggingAspect">	<!-- loading aspect (it will run each and every time when methods inside aop:pointcut execution run -->
+			<aop:pointcut expression="execution(* com.aop.WelcomeService.*(..))" id="serviceMethod" />	<!-- when its methods executes it will trigger aop:around  -->
+			
+			<!-- it will trigger and execute after execution of any methods inside aop:pointcut -->
+			<aop:around method="arroundAdvice" pointcut-ref="serviceMethod"/>	<!-- it will call arroundAdvice method from loggingAspect (loggingAspect.arroundAdvice(pjp) and pass pjp (ProceedingJoinPoint) which contain details about original method -->
+		</aop:aspect>
+	</aop:config>
+
+
+</beans>
