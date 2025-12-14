@@ -44,3 +44,16 @@ print(predicted_weight)
 # Important points
 # 1. lm() is used to build model
 # 2. predeict() is used to predict the new variable base on model
+
+# NOTE:
+# it uses formula i.e (y = mx + c) in this example c is intercept, m is estimated height in model, x is new height given by user
+
+# Predicting weight using formula
+predicted_weight <- model$coefficients[[1]] + model$coefficients[[2]] * 160   # here model$coefficients[[1]] is C (intercept), model$coefficients[[2]] is M (estimated height), 160 is new height
+
+# Predicting weight using predict method
+new_height <- data.frame(height = 160)
+predicted_weight <- predict(model, new_height)
+
+
+# both gives same result
