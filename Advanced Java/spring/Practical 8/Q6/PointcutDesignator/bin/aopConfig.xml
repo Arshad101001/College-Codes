@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<!-- Creating a bean of the Employee class -->
+    <!-- AOP will apply advices to this bean because its methods match the pointcut -->
+	<bean id="employeeService" class="com.aop.Employee" />
+	
+	<!-- Creating a bean of EmployeeAspect -->
+    <!-- This contains all the AOP advice methods -->
+	<bean id="employeeAspect" class="com.aop.EmployeeAspect" />
+	
+	<!-- AOP configuration starts -->
+	<aop:config>
+	
+	    <!-- Linking the aspect (EmployeeAspect) -->
+		<aop:aspect ref="employeeAspect">
+			
+			<!-- 1. execution: runs for any method in Employee -->
+			<aop:pointcut expression="execution(* com.aop.Employee.*(..))" id="executionPoint" />
+			<aop:before method="executionAdvice" pointcut-ref="executionPoint" />
+			
+			<!-- 2. within: runs for methods inside com.aop.Employee class -->
+			<aop:pointcut expression="within(com.aop.Employee)" id="withinPoint" />
+			<aop:before method="withinAdvice" pointcut-ref="withinPoint"/>
+			
+			<!-- 3. args: run when method has a String parameter -->
+			<aop:pointcut expression="args(java.lang.String)" id="argsPoint" />
+			<aop:before method="argsAdvice" pointcut-ref="argsPoint" />
+			
+			<!-- 4. this: proxy-based advice (applies to the proxied bean) -->
+			<aop:pointcut expression="this(com.aop.Employee)" id="thisPoint" />
+			<aop:before method="thisAdvice" pointcut-ref="thisPoint" />
+			
+			<!-- 5. target: target object advice -->
+			<aop:pointcut expression="target(com.aop.Employee)" id="targetPoint" />
+			<aop:before method="targetAdvice" pointcut-ref="targetPoint" />
+			
+			<!-- 6. bean: run based on bean name -->
+			<aop:pointcut expression="bean(employeeService)" id="beanPoint" />
+			<aop:before method="beanAdvice" pointcut-ref="beanPoint" />
+			
+			
+			
+			
+		</aop:aspect>
+	</aop:config>
+
+</beans>
