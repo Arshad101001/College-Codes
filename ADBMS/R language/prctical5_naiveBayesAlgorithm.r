@@ -69,7 +69,7 @@ predictedData <- predict(model, irisTest)       #  it takes each row from irisTe
 predictedData
 
 # Create a confusion matrix to compare predicted and actual species
-table(prediction = predictedData, actual = irisTest$Species)
+table(prediction = predictedData, actual = irisTest$Species) 
 
 
 
