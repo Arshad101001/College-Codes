@@ -1,0 +1,3 @@
+Q4. Write a program to demonstrate RowMapper interface to fetch the records from the database. 
+
+this question's answer is already implemented in question 2
