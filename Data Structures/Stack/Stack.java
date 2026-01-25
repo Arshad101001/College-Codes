@@ -36,47 +36,41 @@ class Stack {
             System.out.println();
         }
     }
-    
+
     // Pop elemnt from stack
-    public static void pop(int[] arr){
+    public static void pop(int[] arr) {
         if (isEmpty()) {
             System.out.println("Cannot pop as Stack is Empty please enter some value");
-        }
-        else{
+        } else {
             top--;
         }
     }
-    
+
     // finding peek element
-    public static void peek(int[] arr){
+    public static void peek(int[] arr) {
         if (isEmpty()) {
-             System.out.println("Cannot show peek element as Stack is Empty please enter some value"); 
-        }
-        else{
+            System.out.println("Cannot show peek element as Stack is Empty please enter some value");
+        } else {
             System.out.println("Top Element of the stack is " + arr[top]);
         }
     }
-    
+
     // finding if stack is full or not
-    public static void isStackFull(int size){
-        if(isFull(size)){
+    public static void isStackFull(int size) {
+        if (isFull(size)) {
             System.out.println("Stack is full you can not enter elments");
-        }
-        else{
+        } else {
             System.out.println("Stack is not full you can enter elments");
         }
     }
-    
-    
-    public static void isStackEmpty(){
-        if(!isEmpty()){
+
+    public static void isStackEmpty() {
+        if (!isEmpty()) {
             System.out.println("Stack is Empty you can insert values ");
-        }
-        else{
-            System.out.println("Stack is full you can not enter elments");
+        } else {
+            System.out.println("Stack is not full");
         }
     }
-    
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -86,14 +80,14 @@ class Stack {
         int[] arr = new int[size];
         int action;
 
-        do{
+        do {
             System.out.println("1. Push");
             System.out.println("2. Pop");
             System.out.println("3. Peek");
             System.out.println("4. Stack full");
             System.out.println("5. Stack empty");
             System.out.println("6. Display Stack");
-            System.out.println("7. Display Top value");            
+            System.out.println("7. Display Top value");
             System.out.println("8. Exit");
             System.out.println("Enter number of operation you want to perform");
 
@@ -103,7 +97,7 @@ class Stack {
                 case 1:
                     push(arr, size);
                     break;
-                case 2: 
+                case 2:
                     pop(arr);
                     break;
                 case 3:
@@ -115,7 +109,7 @@ class Stack {
                 case 5:
                     isStackEmpty();
                     break;
-                case 6: 
+                case 6:
                     displayStack(arr);
                     break;
                 case 7:
@@ -125,9 +119,9 @@ class Stack {
                     System.out.println("Exiting from Application");
                     break;
             }
-        }while(action < 8 || action == 0);
-        
+        } while (action < 8 || action == 0);
+
         sc.close();
     }
-    
+
 }
