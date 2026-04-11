@@ -34,6 +34,8 @@
 </head>
 <body style="width: 1314px; height: 526px">
 <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
     <table class="auto-style1">
         <tr>
             <td class="auto-style2" style="font-size: xx-large; font-weight: bold">Registration Page</td>
@@ -87,6 +89,7 @@
                 <asp:RadioButton ID="male" runat="server" Text="Male" GroupName="gender" />
 &nbsp;
                 <asp:RadioButton ID="female" runat="server" Text="Female" GroupName="gender" />
+            &nbsp;
             </td>
         </tr>
         <tr>
@@ -117,9 +120,25 @@
             <td class="auto-style2">
                 <asp:Label ID="Label8" runat="server" Text="DOB"></asp:Label>
             </td>
-            <td class="auto-style4">
-                <asp:Calendar runat="server" />
-                
+            <td>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                     <ContentTemplate>
+                        <asp:Calendar ID="dob" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+
+                        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+
+                        <NextPrevStyle VerticalAlign="Bottom" />
+                        <OtherMonthDayStyle ForeColor="#808080" />
+                        <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                        <SelectorStyle BackColor="#CCCCCC" />
+
+                        <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+
+                        <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                        <WeekendDayStyle BackColor="#FFFFCC" />
+                        </asp:Calendar>
+                     </ContentTemplate>
+                </asp:UpdatePanel>
             </td>
         </tr>
         <tr>
@@ -128,11 +147,13 @@
             </td>
             <td class="auto-style4">
                 <asp:FileUpload ID="file" runat="server" />
+            &nbsp;
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="file" ErrorMessage="No file has been selected" ForeColor="Red">Select a file</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Button ID="submit" runat="server" Height="32px" Text="Submit" Width="83px" OnClick="BtnSubmit" />
+                <asp:Button ID="sbmt" runat="server" Height="32px" Text="Submit" Width="83px" OnClick="BtnSubmit" />
             </td>
             <td class="auto-style4">&nbsp;</td>
         </tr>

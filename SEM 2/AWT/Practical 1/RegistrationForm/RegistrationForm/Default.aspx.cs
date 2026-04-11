@@ -60,15 +60,15 @@ namespace RegistrationForm
             // 5. Date of Birth (Calendar)
             string dob;
 
-            /*if (dob1.selecteddate != datetime.minvalue)
+            if (this.dob.SelectedDate != DateTime.MinValue)
             {
-                dob = dob1.selecteddate.toshortdatestring();
+                dob = this.dob.SelectedDate.ToShortDateString();
             }
             else
             {
                 dob = "not selected";
             }
-            */
+            
             // 6. File Upload
             string fileName;
 
