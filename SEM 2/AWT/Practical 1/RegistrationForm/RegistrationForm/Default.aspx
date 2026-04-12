@@ -86,10 +86,11 @@
                 <asp:Label ID="Label5" runat="server" Text="Gender"></asp:Label>
             </td>
             <td class="auto-style4">
-                <asp:RadioButton ID="male" runat="server" Text="Male" GroupName="gender" />
-&nbsp;
-                <asp:RadioButton ID="female" runat="server" Text="Female" GroupName="gender" />
-            &nbsp;
+                <asp:RadioButtonList ID="gender" runat="server" OnSelectedIndexChanged="gender_SelectedIndexChanged" RepeatDirection="Horizontal" Width="207px">
+                    <asp:ListItem>Male</asp:ListItem>
+                    <asp:ListItem>Female</asp:ListItem>
+                </asp:RadioButtonList>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="gender" ErrorMessage="gender required" ForeColor="Red">Select gender</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -102,6 +103,8 @@
                 <asp:CheckBox ID="python" runat="server" Text="Python" />
 &nbsp;
                 <asp:CheckBox ID="asp" runat="server" Text="ASP.Net" />
+            &nbsp;&nbsp;
+                <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Course required" ForeColor="Red" OnServerValidate="courseValidate">Select at-least one course</asp:CustomValidator>
             </td>
         </tr>
         <tr>

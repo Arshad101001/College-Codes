@@ -71,3 +71,4 @@ C:\Users\admin\source\repos\RegistrationForm\RegistrationForm\bin\Microsoft.Code
 C:\Users\admin\source\repos\RegistrationForm\RegistrationForm\obj\Debug\RegistrationForm.csproj.CopyComplete
 C:\Users\admin\source\repos\RegistrationForm\RegistrationForm\obj\Debug\RegistrationForm.dll
 C:\Users\admin\source\repos\RegistrationForm\RegistrationForm\obj\Debug\RegistrationForm.pdb
+C:\Users\admin\source\repos\RegistrationForm\RegistrationForm\obj\Debug\RegistrationForm.csproj.AssemblyReference.cache
